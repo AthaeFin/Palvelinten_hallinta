@@ -5,8 +5,53 @@
 </head>
 <body>
   <p>
-    
+      <a href="https://terokarvinen.com/palvelinten-hallinta/#h1-viisikko" target="blank">tehtävänanto</a>
+
+x)
+idempotentti tarkoittaa, että muutoksia ei tehdä turhaan, jos nykyinen tila on haluttu. (ei tarkoita miesvaivaa mihin pitää popsia sinisiä pillereitä). salt-ohjelmaa kutsutaan sudo-käyttäjänä komennolla salt-call, --local
+(toimii silloin juuri sillä koneella millä on). lähde: <a href="https://terokarvinen.com/2021/salt-run-command-locally/" target="blank">Tero Karvinen, 2021, salt run command locally</a>
+
+master asennetaan sudo-käyttäjänä (tai roottina jos on sudon kanssa ongelmia) apt install salt-master, minion taas vastaavasti apt install salt-minion // kunhan on ensin käynyt salt-reposta copypasten ja tehnyt oman hakemiston
+
+Jos haluaa olla poliittisesti korrekti niin vastaavat parit vois olla työkkäri ja työtön, Haaga-Helia ja häröopiskelija. molemmilta instansseilta tulee raippaa jos ei tee mitä käsketään…
+lähde: <a href="https://terokarvinen.com/2018/03/28/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/" target="blank">Tero Karvinen, 2021, Quickstart Salt stack master and slave on Ubuntu Linux</a>
+
+Dokumentaatio on tärkeää, koska on vaikea muistaa hetken päästä, mitä on omalla serverillä puuhastellut. Dokumentaation tulee olla toistettava (samassa ympäristössä samoilla vehkeillä), täsmällinen (mitä teit, milloin teit, mitä kävi jne),
+ja helppolukuinen, tosin: “Kirjoita huolellista kieltä. Luottaisitko sellaseen hammaslääkäriin, jonka wepisilvulla hirveesti on kirjotusvirhietä?” -Tero Karvinen 2006. Luottaisin, koska hammaslääkärin tehtävänä on korjata hampaita, eikä kieliasua. 
+lähde: <a href="https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/" target="blank">Tero Karvinen, 2006, Raportin kirjoittaminen</a>
+
+Salt repository asennetaan tekemällä hakemisto keyringseille komennolla mkdir -p /etc/apt/keyrings, jonka jälkeen PuTTY-etäyhteydellä kopioi ja liitä, mitä salt:in dokumentaatiosivut käskee tekemään. 
+curl -fsSL https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public | sudo tee /etc/apt/keyrings/salt-archive-keyring.pgp
+curl -fsSL https://github.com/saltstack/salt-install-guide/releases/latest/download/salt.sources | sudo tee /etc/apt/sources.list.d/salt.sources
+lähde: https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html <a href="https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html" target="blank">Salt:in asennussivut</a>
+
+ 
+a)
+asensin Debian 12.10.0 Bookwormin kotilabran proxmox-virtuaalialustalle, ilman graafista käyttöliittymää. ISO-image oli jo valmiiksi ladattu Debianin omilta sivuilta Linux-palvelinprojektia varten. Prosessoreja pistin 8, RAM:ia 16GB, 
+ja levytilaa 80GB kun sitä testiympäristössä on runsaasti käytettävissä. Laitoin staattisen IP-osoitteen /etc/network/interfaces -konfigurointitiedostoon.
+
+b) asensin tuoreeseen Debian-virtuaalikoneeseen <a href="https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html" target="blank">asennusohjeiden</a> mukaan, otin PuTTY:lla yhteyttä omalta koneelta 
+virtuaalikoneeseen, jotta voin suoraan hiiren oikealla pasteta osoitteen. Tässä kohtaa huomasin, että curl pitää asentaa virtuaalikoneeseen, jotta curl-komento toimii…
+
+c) komento salt-call –local -l info state.single, ja sen perään 
+pkg.installed ohjelman_nimi (lisää) pkg.removed ohjelman_nimi (poistaa)
+Screenshot 2025-03-31 213804.png
+file.managed /hakemisto/tiedosto (lisää)
+file.managed /hakemisto/tiedosto contents=”tekstiä” (lisää tiedoston, ja sen sisään tekstiä)
+file.absent /hakemisto/tiedosto (poistaa)
+service.running ohjelman_nimi enable=True (käynnistää)
+service.dead ohjelman_nimi enable=False (sammuttaa)
+user.present käyttäjänimi (lisää käyttäjän)
+user.absent käyttäjänimi (poistaa käyttäjän)
+cmd.run ’touch /hakemisto/tiedosto’ creates=”/hakemisto/tiedosto”
+lähde: <a href="https://terokarvinen.com/2021/salt-run-command-locally/" target="blank">Tero Karvinen 2021, salt run command locally</a>
   </p>
    <img src="./Screenshot 2025-03-31 213804.png" alt="asensin puun">
+    <img src="./Screenshot 2025-03-31 213844.png" alt="lisäsin tiedoston kaktus, jossa on teksti 'aavikolla'">
+    <img src="./Screenshot 2025-03-31 213909.png" alt="totesin salt-minionin olevan päällä">
+    <img src="./Screenshot 2025-03-31 214002.png" alt="lisäsin käyttäjän">
+    <img src="./Screenshot 2025-03-31 214051.png" alt="suorittaa komentoja; tässä tapauksessa luo kaktus2 -tiedoston, mikäli sitä ei vielä ole olemassa">
+    <img src="./Screenshot 2025-03-31 214204.png" alt="sama komento, mutta mitään ei tapahdu, koska kaktus2 on jo olemassa">
+    
 </body>
 </html>
