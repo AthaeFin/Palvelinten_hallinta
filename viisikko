@@ -28,6 +28,7 @@ virtuaalikoneeseen, jotta voin suoraan hiiren oikealla pasteta osoitteen. Täss�
 
 c) komento salt-call –local -l info state.single, ja sen perään 
 pkg.installed ohjelman_nimi (lisää) pkg.removed ohjelman_nimi (poistaa)
+Screenshot 2025-03-31 213804.png
 file.managed /hakemisto/tiedosto (lisää)
 file.managed /hakemisto/tiedosto contents=”tekstiä” (lisää tiedoston, ja sen sisään tekstiä)
 file.absent /hakemisto/tiedosto (poistaa)
