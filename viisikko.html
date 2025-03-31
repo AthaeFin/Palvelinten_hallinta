@@ -30,34 +30,44 @@ idempotentti tarkoittaa, että muutoksia ei tehdä turhaan, jos nykyinen tila on
 </p>
  <p>
 a)
-asensin Debian 12.10.0 Bookwormin kotilabran proxmox-virtuaalialustalle, ilman graafista käyttöliittymää. ISO-image oli jo valmiiksi ladattu Debianin omilta sivuilta Linux-palvelinprojektia varten. Prosessoreja pistin 8, RAM:ia 16GB, 
-ja levytilaa 80GB kun sitä testiympäristössä on runsaasti käytettävissä. Laitoin staattisen IP-osoitteen /etc/network/interfaces -konfigurointitiedostoon.
+asensin Debian 12.10.0 Bookwormin kotilabran proxmox-virtuaalialustalle, ilman graafista käyttöliittymää. ISO-image oli jo valmiiksi ladattu Debianin omilta sivuilta Linux-palvelinprojektia varten. Prosessoreja pistin 8,
+<br>RAM:ia 16GB, ja levytilaa 80GB kun sitä testiympäristössä on runsaasti käytettävissä. Laitoin staattisen IP-osoitteen /etc/network/interfaces -konfigurointitiedostoon.
  </p>
     <p>
-b) asensin tuoreeseen Debian-virtuaalikoneeseen <a href="https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html" target="blank">asennusohjeiden</a> mukaan, otin PuTTY:lla yhteyttä omalta koneelta 
-virtuaalikoneeseen, jotta voin suoraan hiiren oikealla pasteta osoitteen. Tässä kohtaa huomasin, että curl pitää asentaa virtuaalikoneeseen, jotta curl-komento toimii…
+b) asensin tuoreeseen Debian-virtuaalikoneeseen <a href="https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html" target="blank">asennusohjeiden</a> mukaan, otin PuTTY:lla
+<br> yhteyttä omalta koneelta virtuaalikoneeseen, jotta voin suoraan hiiren oikealla pasteta osoitteen. Tässä kohtaa huomasin, että curl pitää asentaa virtuaalikoneeseen, jotta curl-komento toimii…
     </p>
     <p>
 c) komento salt-call –local -l info state.single, ja sen perään 
-pkg.installed ohjelman_nimi (lisää) pkg.removed ohjelman_nimi (poistaa)
-Screenshot 2025-03-31 213804.png
-file.managed /hakemisto/tiedosto (lisää)
-file.managed /hakemisto/tiedosto contents=”tekstiä” (lisää tiedoston, ja sen sisään tekstiä)
-file.absent /hakemisto/tiedosto (poistaa)
-service.running ohjelman_nimi enable=True (käynnistää)
-service.dead ohjelman_nimi enable=False (sammuttaa)
-user.present käyttäjänimi (lisää käyttäjän)
-user.absent käyttäjänimi (poistaa käyttäjän)
-cmd.run ’touch /hakemisto/tiedosto’ creates=”/hakemisto/tiedosto”
-lähde: <a href="https://terokarvinen.com/2021/salt-run-command-locally/" target="blank">Tero Karvinen 2021, salt run command locally</a>
+<br>pkg.installed ohjelman_nimi (lisää)
+<br>pkg.removed ohjelman_nimi (poistaa)
+<br>file.managed /hakemisto/tiedosto (lisää)
+<br>file.managed /hakemisto/tiedosto contents=”tekstiä” (lisää tiedoston, ja sen sisään tekstiä)
+<br>file.absent /hakemisto/tiedosto (poistaa)
+<br>service.running ohjelman_nimi enable=True (käynnistää)
+<br>service.dead ohjelman_nimi enable=False (sammuttaa)
+<br>user.present käyttäjänimi (lisää käyttäjän)
+<br>user.absent käyttäjänimi (poistaa käyttäjän)
+<br>cmd.run ’touch /hakemisto/tiedosto’ creates=”/hakemisto/tiedosto”
+<br>lähde: <a href="https://terokarvinen.com/2021/salt-run-command-locally/" target="blank">Tero Karvinen 2021, salt run command locally</a>
   </p>
     
-   <br> <img src="./Screenshot 2025-03-31 213804.png" alt="asensin puun">
+   <br><br><br> <img src="./Screenshot 2025-03-31 213804.png" alt="asensin puun">
+    <p>
+        asensin tree-ohjelman, joka näyttää hakemistopuurakenteen. Info näyttää, mitä komentoja ajettiin, jotta ohjelma asentuu. 
+    </p>
     <br><img src="./Screenshot 2025-03-31 213844.png" alt="lisäsin tiedoston kaktus, jossa on teksti 'aavikolla'">
+    <p>
+        lisäsin tiedoston kaktus hakemistoon /tmp, jossa on teksti 'aavikolla'. Info kertoo, että muuttunutta on uusi tiedosto.
+    </p>
     <br><img src="./Screenshot 2025-03-31 213909.png" alt="totesin salt-minionin olevan päällä">
+    <p>totesin salt-minionin olevan päällä. Muuta jännittävää tällä virtuaalikoneella ei vielä ole, info kertoo, että salt-minion on jo päällä, ei muutoksia. </p>
     <br><img src="./Screenshot 2025-03-31 214002.png" alt="lisäsin käyttäjän">
+    <p>lisäsin käyttäjän, se lisäsi käyttäjälle saman nimisen ryhmän, kotihakemiston</p>
     <br><img src="./Screenshot 2025-03-31 214051.png" alt="suorittaa komentoja; tässä tapauksessa luo kaktus2 -tiedoston, mikäli sitä ei vielä ole olemassa">
+    <p>suorittaa komentoja; tässä tapauksessa luo kaktus2 -tiedoston, mikäli sitä ei ole olemassa</p>
     <br><img src="./Screenshot 2025-03-31 214204.png" alt="sama komento, mutta mitään ei tapahdu, koska kaktus2 on jo olemassa">
+    <p>sama komento, mutta mitään ei muuteta, koska kaktus2 on jo olemassa</p>
     
 </body>
 </html>
