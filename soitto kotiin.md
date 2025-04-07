@@ -15,6 +15,7 @@ Avasin komentorivin ja testasin, onko vagrant olemassa:
 Kävin manuaalisti tekemässä kansion, jota haluan vagrantin käyttävän, jonka jälkeen komentoriville syötin vagrant init
 
 ![Screenshot 2025-04-07 231935](https://github.com/user-attachments/assets/88414ca4-cd54-46de-a09c-e8a6fac0fd8e)
+
 vagrant init luo konfiguraatiotiedoston, jota lähdin tekstieditorilla muokkaamaan. 
 
 
@@ -43,7 +44,7 @@ Kutsun tätä siis Frankensteinin koodiksi, koska osa on Tero Karviselta lainatt
      Vika korjautui kun laitoin konfiguraatiotiedostoon vain pieniä kirjaimia.
 
   3. ilmeisesti private_network ei ollut itsekeksittävä tieto, olin määritellyt sisaverkoksi
-  4. 
+     
      ![image](https://github.com/user-attachments/assets/0704bf68-31da-4b08-8afa-0a1b47badb0d)
      
      Vika korjautui, kun määritteli verkon private_network.
