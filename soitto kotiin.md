@@ -25,32 +25,41 @@ perusmuotoisen Debian-koneen saa muokkaamalla konfiguraatiotiedostoa:
 ![Screenshot 2025-04-07 194351](https://github.com/user-attachments/assets/118cf40d-ecdf-402a-873e-947aee794fe5)
 
 ja kirjoittamalla komentoriville vagrant up:
+
 ![Screenshot 2025-04-07 232606](https://github.com/user-attachments/assets/570e66cc-52da-4027-bc6b-ae338936d271)
 
 <h2> C, D ja E) Salt master ja minion: </h2>
 Tällä konfiguraatiotiedostolla sain molemmat virtuaalikoneet tehtyä ja konfiguroitua:
 
 ![image](https://github.com/user-attachments/assets/4c626145-4560-4bdf-9aae-693aa4bececd)
+
 Kutsun tätä siis Frankensteinin koodiksi, koska osa on Tero Karviselta lainattua, osa täältä: https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/linux-deb.html ja osa omasta hatusta. 
 
 - VIRHEITÄ -
   1. konfiguraatiotiedostoon laitoin isoilla alkukirjaimilla koulun ja opiskelijan, sain vikailmoitusta
      
      ![image](https://github.com/user-attachments/assets/5e46c35f-c620-44a3-9281-bea2b4b458d8)
+     
      Vika korjautui kun laitoin konfiguraatiotiedostoon vain pieniä kirjaimia.
 
   3. ilmeisesti private_network ei ollut itsekeksittävä tieto, olin määritellyt sisaverkoksi
+  4. 
      ![image](https://github.com/user-attachments/assets/0704bf68-31da-4b08-8afa-0a1b47badb0d)
+     
      Vika korjautui, kun määritteli verkon private_network.
 
 pingaan masterilla minionia:
+
 ![image](https://github.com/user-attachments/assets/390d5289-8192-4223-a2e3-0e0d137d6693)
 
 Avaimen hyväksyntä kompuroinnin kautta:
+
 ![image](https://github.com/user-attachments/assets/d83fac61-d1ad-47d7-ba48-1f804e4ece99)
+
 - daemon pitää potkaista ensin päälle (oikealla komennolla......)
 
 Testaillaan, toimiiko masterilla käskyttäminen:
+
 ![image](https://github.com/user-attachments/assets/4b098065-df2a-481b-8064-d5e65a2ee9b7)
 
 ![image](https://github.com/user-attachments/assets/997a985b-4f51-4e28-8eb3-fc81a0e84e24)
