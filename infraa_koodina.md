@@ -9,7 +9,8 @@
 
 
 #### esimerkki konfiguraatiotiedostosta:
-Screenshot 2025-03-24 122813.png
+![Screenshot 2025-03-24 122813](https://github.com/user-attachments/assets/b71a2f64-871b-443d-9d73-34ece63bc07f)
+
 ### a) Hei infrakoodi!
 
 Ensiksi mennään Vagrantilla master-koneelle komennolla:
@@ -63,19 +64,20 @@ ja lopuksi:
 
 testaaminen:
 
-![](Screenshot 2025-04-14 161253.png)
+![Screenshot 2025-04-14 161253](https://github.com/user-attachments/assets/d5d3ae74-6f32-45c5-91a9-7b23a89de2b2)
 
 uudestaan idempotentin testaamiseksi:
 
-![](Screenshot 2025-04-14 161218.png)
+![Screenshot 2025-04-14 161218](https://github.com/user-attachments/assets/17ad2a60-c713-4e19-8f8e-ab2cffb6685e)
 
 tree ja kaksi tiedostoa (erkkiesimerkki ja kilpikonnia)
 
-![](Screenshot 2025-04-14 162715.png)
+![Screenshot 2025-04-14 162715](https://github.com/user-attachments/assets/95c53043-b17b-4313-bd6f-7a12e2de072a)
 
 käyttäjä on luotu (salasanalla ei pääse sisään):
 
-![](Screenshot 2025-04-14 162645.png)
+![Screenshot 2025-04-14 162645](https://github.com/user-attachments/assets/2d43bf29-a301-4145-b362-99817ccd924f)
+
 
 
 #### Lähteet: 
