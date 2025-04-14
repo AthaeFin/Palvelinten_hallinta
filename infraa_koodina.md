@@ -1,6 +1,6 @@
 # Infraa koodina
 
-### x) tiivistelmä
+### x) tiivistelmä, lähteet merkitty loppuun:
 - hakemiston init.sls on YAML konfiguraatiotiedosto
 - On kahdenlaisia kieliä, käännettäviä ja tulkattavia. YAML on käännettävissä Pythoniksi, jolloin Salt pystyy käyttämään sitä.
 - Isoilla ja pienillä kirjaimilla on väliä, tabulaattorin sijasta käytetään välilyöntejä
