@@ -9,7 +9,7 @@
 
 
 #### esimerkki konfiguraatiotiedostosta:
-![](../Pictures/Screenshots/Screenshot 2025-03-24 122813.png)
+![](Screenshot 2025-03-24 122813.png)
 ### a) Hei infrakoodi!
 
 Ensiksi mennään Vagrantilla master-koneelle komennolla:
@@ -63,19 +63,19 @@ ja lopuksi:
 
 testaaminen:
 
-![](../Pictures/Screenshots/Screenshot 2025-04-14 161253.png)
+![](Screenshot 2025-04-14 161253.png)
 
 uudestaan idempotentin testaamiseksi:
 
-![](../Pictures/Screenshots/Screenshot 2025-04-14 161218.png)
+![](Screenshot 2025-04-14 161218.png)
 
 tree ja kaksi tiedostoa (erkkiesimerkki ja kilpikonnia)
 
-![](../Pictures/Screenshots/Screenshot 2025-04-14 162715.png)
+![](Screenshot 2025-04-14 162715.png)
 
 käyttäjä on luotu (salasanalla ei pääse sisään):
 
-![](../Pictures/Screenshots/Screenshot 2025-04-14 162645.png)
+![](Screenshot 2025-04-14 162645.png)
 
 
 #### Lähteet: 
