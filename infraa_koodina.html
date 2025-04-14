@@ -1,0 +1,66 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title></title></head><body><h1>Infraa koodina</h1>
+<h3>x) tiivistelm‰</h3>
+<ul>
+<li>hakemiston init.sls on YAML konfiguraatiotiedosto</li>
+<li>On kahdenlaisia kieli‰, k‰‰nnett‰vi‰ ja tulkattavia. YAML on k‰‰nnett‰viss‰ Pythoniksi, jolloin Salt pystyy k‰ytt‰m‰‰n sit‰.</li>
+<li>Isoilla ja pienill‰ kirjaimilla on v‰li‰, tabulaattorin sijasta k‰ytet‰‰n v‰lilyˆntej‰</li>
+<li>t‰rke‰t tilafunktiot pkg, file, service ja user, cmd:t‰ vakavasti harkiten</li>
+</ul>
+<h4>esimerkki konfiguraatiotiedostosta:</h4>
+<p>![](../Pictures/Screenshots/Screenshot 2025-03-24 122813.png)</p>
+<h3>a) Hei infrakoodi!</h3>
+<p>Ensiksi menn‰‰n Vagrantilla master-koneelle komennolla:</p>
+<pre><code>vagrant ssh harvardhelia
+</code></pre>
+<p>Luodaan uusi hakemisto ja siirryt‰‰n sinne:</p>
+<pre><code>mkdir -p /srv/salt/erkki
+cd /srv/salt/erkki
+</code></pre>
+<p>tekstieditorilla luodaan konfiguraatiotiedosto, jota kutsutaan myˆhemmin:</p>
+<pre><code>sudoedit init.sls	
+</code></pre>
+<p>tekstieditoriin kirjoitetaan:</p>
+<pre><code>/tmp/erkki:
+  esimerkki
+</code></pre>
+<h3>b) infrakoodin ajo verkon yli</h3>
+<pre><code>sudo salt '*' state.apply erkki
+</code></pre>
+<p>ìerkkiî kutsuu hakemistoa ja siell‰ olevaa init-tiedostoa, ja ajaa sinne kirjoitetut komennot.</p>
+<h3>c) uusi ja parempi init.sls</h3>
+<pre><code>mkdir -p /srv/salt/tervehdys
+cd /srv/salt/tervehdys
+sudoedit init.sls
+</code></pre>
+<p>init-tiedostossa:</p>
+<pre><code>#tiedoston luonti
+/tmp/kilpikonnia:
+  file.managed
+  
+#ohjelman asentaminen
+tree:
+  pkg.installed
+
+#k‰ytt‰j‰n lis‰‰minen
+kilpakonna:
+  user.present
+</code></pre>
+<p>ja lopuksi:</p>
+<pre><code>sudo salt '*' state.apply tervehdys
+</code></pre>
+<p>testaaminen:</p>
+<p>![](../Pictures/Screenshots/Screenshot 2025-04-14 161253.png)</p>
+<p>uudestaan idempotentin testaamiseksi:</p>
+<p>![](../Pictures/Screenshots/Screenshot 2025-04-14 161218.png)</p>
+<p>tree ja kaksi tiedostoa (erkkiesimerkki ja kilpikonnia)</p>
+<p>![](../Pictures/Screenshots/Screenshot 2025-04-14 162715.png)</p>
+<p>k‰ytt‰j‰ on luotu (salasanalla ei p‰‰se sis‰‰n):</p>
+<p>![](../Pictures/Screenshots/Screenshot 2025-04-14 162645.png)</p>
+<h4>L‰hteet:</h4>
+<ul>
+<li><a href="https://terokarvinen.com/palvelinten-hallinta/#h3-infraa-koodina">https://terokarvinen.com/palvelinten-hallinta/#h3-infraa-koodina</a> teht‰v‰nanto, Tero Karvinen, luettu 14.4.2025</li>
+<li><a href="https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml">https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml</a> YAML-k‰yttˆohjeet, luettu 14.4.2025</li>
+<li><a href="https://terokarvinen.com/2024/hello-salt-infra-as-code/">https://terokarvinen.com/2024/hello-salt-infra-as-code/</a> infra koodina, Tero Karvinen, luettu 14.4.2025</li>
+<li><a href="https://terokarvinen.com/2021/salt-run-command-locally/">https://terokarvinen.com/2021/salt-run-command-locally/</a> salt-komentoja, Tero Karvinen, luettu 14.4.2025</li>
+</ul>
+</body></html>
