@@ -9,7 +9,7 @@
 
 
 #### esimerkki konfiguraatiotiedostosta:
-![](Screenshot 2025-03-24 122813.png)
+Screenshot 2025-03-24 122813.png
 ### a) Hei infrakoodi!
 
 Ensiksi mennään Vagrantilla master-koneelle komennolla:
