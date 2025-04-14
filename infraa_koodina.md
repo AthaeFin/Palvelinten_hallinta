@@ -8,8 +8,10 @@
 
 
 
-#### esimerkki konfiguraatiotiedostosta:
+#### Esimerkki konfiguraatiotiedostosta:
 ![Screenshot 2025-03-24 122813](https://github.com/user-attachments/assets/b71a2f64-871b-443d-9d73-34ece63bc07f)
+
+Käytin tätä docker compose filena omassa projektissa, tässä on kaikki kolme elementtiä, Lists, Scalar, Dictionary.
 
 ### a) Hei infrakoodi!
 
