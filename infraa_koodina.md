@@ -30,12 +30,20 @@ tekstieditorilla luodaan konfiguraatiotiedosto, jota kutsutaan myöhemmin:
 
 tekstieditoriin kirjoitetaan:
 
-	/tmp/erkki:
-	  esimerkki
+	/tmp/erkkiesimerkki:
+	  file.managed
+
+![Screenshot 2025-04-14 161758](https://github.com/user-attachments/assets/d4e963b8-99e6-471a-a950-74b028bf2d85)
+
  
 ### b) infrakoodin ajo verkon yli
 
+Masterilla kutsutaan minionia, joka tekee tiedoston omaan /tmp/esimerkki -hakemistoonsa:
+
 	sudo salt '*' state.apply erkki
+
+ ![Screenshot 2025-04-14 161332](https://github.com/user-attachments/assets/6feced2b-a9b9-4a07-9d49-f99758a86f6c)
+
 	
 "erkki" kutsuu hakemistoa ja siellä olevaa init-tiedostoa, ja ajaa sinne kirjoitetut komennot.
 
